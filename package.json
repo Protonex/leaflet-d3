@@ -7,37 +7,28 @@
 	"author": "Asymmetrik, Ltd.",
 	"copyright": "Copyright (c) 2007-2017 Asymmetrik Ltd, a Maryland Corporation",
 	"license": "MIT",
-
 	"scripts": {
 		"build": "gulp build"
 	},
-
 	"main": "dist/leaflet-d3.js",
 	"module": "index.js",
 	"typings": "index.d.ts",
-
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Asymmetrik/leaflet-d3.git"
+		"url": "https://github.com/Protonex/leaflet-d3.git"
 	},
-
 	"peerDependencies": {
 		"d3": "4",
 		"d3-hexbin": "0.2",
 		"leaflet": "1"
 	},
-
 	"devDependencies": {
 		"d3": "4.6",
 		"@types/d3": "4.5",
-
 		"d3-hexbin": "0.2",
-
 		"leaflet": "1.0",
 		"@types/leaflet": "1.0",
-
 		"rollup": "0.41",
-
 		"gulp": "3.9",
 		"gulp-eslint": "3.0",
 		"gulp-load-plugins": "1.5",
