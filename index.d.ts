@@ -139,4 +139,80 @@ declare namespace L {
 
 	function pingLayer(config?: PingLayerConfig): PingLayer;
 
+
+	/*
+	 * D3SvgLayer
+	 */
+	interface D3SvgLayer extends L.Layer {
+		radius(): number;
+		radius(v: number): this;
+
+		opacity(): number;
+		opacity(v: number): this;
+
+		duration(): number;
+		duration(v: number): this;
+
+		colorScaleExtent(): [ number, number ];
+		colorScaleExtent(v: [ number, number ]): this;
+
+		radiusScaleExtent(): [ number, number ];
+		radiusScaleExtent(v: [ number, number ]): this;
+
+		colorRange(): string[];
+		colorRange(v: string[]): this;
+
+		radiusRange(): number[];
+		radiusRange(v: number[]): this;
+
+		colorScale(): any;
+		colorScale(v: any): this;
+
+		radiusScale(): any;
+		radiusScale(v: any): this;
+
+		lng(): internal.ObjectFn<number>;
+		lng(v: internal.ObjectFn<number>): this;
+
+		lat(): internal.ObjectFn<number>;
+		lat(v: internal.ObjectFn<number>): this;
+
+		colorValue(): internal.ObjectFn<number>;
+		colorValue(v: internal.ObjectFn<number>): this;
+
+		radiusValue(): internal.ObjectFn<number>;
+		radiusValue(v: internal.ObjectFn<number>): this;
+
+		fill(): internal.ObjectFn<string>;
+		fill(v: internal.ObjectFn<string>): this;
+
+		data(): any[];
+		data(v: any[]): this;
+
+		dispatch(): any;
+
+		getLatLngs(): any[];
+		toGeoJSON(): any[];
+
+		redraw(): void;
+	}
+
+
+	interface D3SvgLayerConfig {
+		radius?: number,
+		opacity?: number,
+		duration?: number,
+
+		colorScaleExtent?: [ number, number ],
+		radiusScaleExtent?: [ number, number ],
+		colorRange?: string[],
+		radiusRange?: [ number, number ],
+
+		pointerEvents?: string
+	}
+
+	function d3SvgLayer(config?: D3SvgLayerConfig): D3SvgLayer;
+
+
+
 }

@@ -20,7 +20,7 @@ if (L.version >= "1.0") {
 }
 
 // Class definition
-L.D3SvgOverlay = (L.Layer ? L.Layer : L.Class).extend({
+L.D3SvgLayer = (L.Layer ? L.Layer : L.Class).extend({
 	includes: (L.version < "1.0" ? L.Mixin.Events : []),
 
 	_undef: function (a) {
@@ -170,10 +170,10 @@ L.D3SvgOverlay = (L.Layer ? L.Layer : L.Class).extend({
 
 });
 
-L.D3SvgOverlay.version = "3.0";
+L.D3SvgLayer.version = "3.0";
 
 // Factory method
-L.d3SvgOverlay = function (drawCallback, options) {
-	return new L.D3SvgOverlay(drawCallback, options);
+L.d3SvgLayer = function (drawCallback, options) {
+	return new L.D3SvgLayer(drawCallback, options);
 };
 
