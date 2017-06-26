@@ -69,8 +69,8 @@ L.D3SvgLayer = (L.Layer ? L.Layer : L.Class).extend({
 		this._shift = this.map.latLngToLayerPoint(this._wgsOrigin)
 			._subtract(this._wgsInitialShift.multiplyBy(this._scale));
 
-		var shift = ["translate(", this._shift.x, ",", this._shift.y, ") "];
-		var scale = ["scale(", this._scale, ",", this._scale, ") "];
+		var shift = [ "translate(", this._shift.x, ",", this._shift.y, ") " ];
+		var scale = [ "scale(", this._scale, ",", this._scale, ") " ];
 		this._rootGroup.attr("transform", shift.concat(scale).join(""));
 
 		if (this.options.zoomDraw) {
@@ -89,7 +89,8 @@ L.D3SvgLayer = (L.Layer ? L.Layer : L.Class).extend({
 			this._svg = d3.select(map._panes.overlayPane)
 				.select("svg");
 			this._rootGroup = this._svg.append("g");
-		} else {
+		}
+		else {
 			this._svg = L.svg();
 			map.addLayer(this._svg);
 			this._rootGroup = d3.select(this._svg._rootGroup).classed("d3-overlay", true);
@@ -124,7 +125,8 @@ L.D3SvgLayer = (L.Layer ? L.Layer : L.Class).extend({
 		if (d3.geo) {
 			//d3 v3
 			this.projection.pathFromGeojson = d3.geo.path().projection(d3.geo.transform({point: this.projection._projectPoint}));
-		} else {
+		}
+		else {
 			//d3 v4
 			this.projection.pathFromGeojson = d3.geoPath().projection(d3.geoTransform({point: this.projection._projectPoint}));
 
@@ -149,7 +151,8 @@ L.D3SvgLayer = (L.Layer ? L.Layer : L.Class).extend({
 		if (L.version < "1.0") {
 			map.off("viewreset", this._zoomChange, this);
 			this._rootGroup.remove();
-		} else {
+		}
+		else {
 			this._svg.remove();
 		}
 	},
@@ -161,7 +164,7 @@ L.D3SvgLayer = (L.Layer ? L.Layer : L.Class).extend({
 	initHelperValues: function () {
 		// Init shift/scale invariance helper values
 		this._pixelOrigin = this.map.getPixelOrigin();
-		this._wgsOrigin = L.latLng([0, 0]);
+		this._wgsOrigin = L.latLng([ 0, 0 ]);
 		this._wgsInitialShift = this.map.latLngToLayerPoint(this._wgsOrigin);
 		this._zoom = this.map.getZoom();
 		this._shift = L.point(0, 0);
